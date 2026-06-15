@@ -1,9 +1,17 @@
 services:
-  test:
+  django-server:
     build:
       context: .
       dockerfile: Dockerfile
     working_dir: /app/personal-website
-    container_name: test
+    container_name: django-server
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+      - DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
+      - DEBUG=True
+    env_file: .env
     volumes:
       - ../personal-website:/app/personal-website/

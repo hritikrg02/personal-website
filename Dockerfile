@@ -1,11 +1,8 @@
-FROM python:3.13-alpine
+FROM python:3.13-slim
 
 COPY requirements.txt .
-COPY .venv .
 
-RUN python -m venv ./.venv/saynganth-one && \
-	source ./.venv/saynganth-one/bin/activate && \
-	pip install -r requirements.txt
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
 
-
-CMD ["python", "main.py"]
+CMD ["python", "test_project/manage.py", "runserver", "0.0.0.0:8000", "--noreload"]
