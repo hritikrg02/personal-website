@@ -4,4 +4,4 @@ install:
 	pip install -r requirements.txt
 
 remove:
-	rm -rf ./.venv
+	rm -rf ./.venv/saynganth-one
