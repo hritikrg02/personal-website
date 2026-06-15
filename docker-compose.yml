@@ -1,0 +1,9 @@
+services:
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app/personal-website
+    container_name: test
+    volumes:
+      - ../personal-website:/app/personal-website/
