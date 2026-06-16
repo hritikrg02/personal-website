@@ -2,6 +2,7 @@
 {% load static %}
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,6 @@
 </head>
 
 <body>
-
     <header class="site-header">
         <nav>
             <span class="logo">saynganth<span>.one</span></span>
@@ -24,16 +24,16 @@
         </nav>
     </header>
 
-    <div>
+    <div class="container">
         {% block content %}
         {% endblock content %}
     </div>
 
+    <div class="container">
+        <footer class="site-footer" id="contact">
+            <span>HRITIK SAYNGANTHONE, 2026</span>
+        </footer>
+    </div>
 </body>
 
-<div class="container">
-    <footer class="site-footer" id="contact">
-        <span>HRITIK SAYNGANTHONE, 2026</span>
-    </footer>
-</div>
 </html>
