@@ -1,4 +1,4 @@
 /* static/css/base.css */
-body footer {
-    color: red;
+body {
+    font-family: "JetBrains Mono";
 }
