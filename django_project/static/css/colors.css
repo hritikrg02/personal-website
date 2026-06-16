@@ -1,0 +1,13 @@
+/* static/css/colors.css */
+:root {
+    --color-bg: #FCF7F8;
+    --color-surface: #E5E5EA;
+    --color-surface-alt: #CED3DC;
+
+    --color-text: #353238;
+    --color-text-muted: #4E4B50;
+    --color-text-faint: #B2AEB0;
+
+    --color-accent: #F55D5D;
+    --color-border: #4E8098;
+}
