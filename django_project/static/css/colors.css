@@ -1,13 +1,14 @@
 /* static/css/colors.css */
-:root {
-    --color-bg: #FCF7F8;
-    --color-surface: #E5E5EA;
-    --color-surface-alt: #CED3DC;
 
-    --color-text: #353238;
-    --color-text-muted: #4E4B50;
-    --color-text-faint: #B2AEB0;
+:root {
+    --color-bg: #F1E3D3;
+    --color-surface: #D9CDBF;
+    --color-surface-alt: #C1B6AA;
+
+    --color-text: #2F2D2E;
+    --color-text-muted: #6A6460;
+    --color-text-faint: #9A9189;
 
     --color-accent: #F55D5D;
-    --color-border: #4E8098;
+    --color-border: #F3A098;
 }
