@@ -1,18 +1,27 @@
 /* static/css/home.css */
 
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem 8rem;
+
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .hero {
     display: grid;
-    grid-template-columns: 1fr 150px;
-    gap: 1.5rem;
+    grid-template-columns: 1fr auto;
+    gap: clamp(1rem, 4vw, 10rem);
     align-items: center;
-    margin-bottom: 3rem;
 }
 
 .badge {
     display: inline-block;
     background: var(--color-text);
     color: var(--color-accent);
-    font-size: 0.7rem;
+    font-size: clamp(.6rem, .8rem, 1rem);
     font-weight: 700;
     letter-spacing: 0.5px;
     padding: 4px 12px;
@@ -24,21 +33,28 @@
     font-family: var(--font-serif);
     font-style: italic;
     font-weight: 700;
-    font-size: 6rem;
+    font-size: clamp(3rem, 8vw, 12rem);
     line-height: 1.1;
     letter-spacing: -1px;
-    margin-bottom: 0.5rem;
-}
-
-.hero p {
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
-    max-width: 280px;
 }
 
 .photo-slot.profile {
-    width: 150px;
-    height: 180px;
-    border-top: 3px solid var(--color-accent);
-    border-right: 3px solid var(--color-accent);
+    width: clamp(150px, 30vw, 750px);
+}
+
+.photo-slot.profile img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-slot.profile {
+        justify-self: start;
+    }
 }
