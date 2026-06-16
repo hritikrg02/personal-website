@@ -1,22 +1,36 @@
 <!--templates/base.html-->
 {% load static %}
-<html>
 
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hritik Saynganthone's Website</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 
 <body>
-    <header>
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'about' %}">About</a>
+
+    <header class="site-header">
+        <nav>
+            <span class="logo">saynganth<span>.one</span></span>
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">HOME</a></li>
+                <li><a href="{% url 'about' %}">ABOUT ME</a></li>
+            </ul>
+        </nav>
     </header>
+
     <div>
         {% block content %}
         {% endblock content %}
     </div>
-    <footer>copyright 2026</footer>
+
 </body>
 
+<div class="container">
+    <footer class="site-footer" id="contact">
+        <span>HRITIK SAYNGANTHONE, 2026</span>
+    </footer>
+</div>
 </html>
