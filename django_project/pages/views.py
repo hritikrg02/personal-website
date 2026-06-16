@@ -4,6 +4,8 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 
+# TODO decide which kind of view I want to use for the website, I'm thinking objects but part of me wants to do functions
+
 def home_page_view(request):  # function-based view
     return render(request, "home.html")
 
