@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import home_page_view, AboutPageView
+from .views import home_page_view, about_page_view
 
 # the route is the subdirectory based on what's in the django-project/urls.py
 urlpatterns = [
@@ -8,6 +8,6 @@ urlpatterns = [
         "", home_page_view, name="home"
     ),
     path(
-        "about/", AboutPageView.as_view(), name="about"
+        "about/", about_page_view, name="about"
     )
 ]
