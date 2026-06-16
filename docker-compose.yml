@@ -18,10 +18,21 @@ services:
     volumes:
       - postgres_data:/etc/data
 
+  db-migration:
+    build: .
+    command: python django_project/manage.py migrate
+    working_dir: /var/migrations
+    container_name: django-migrations
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ../personal-website:/var/migrations/
+
   web-server:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
+    command: python django_project/manage.py runserver 0.0.0.0:2680 --noreload
     working_dir: /app/personal-website
     container_name: django-server
     ports:
@@ -33,6 +44,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
+      db-migration:
+        condition: service_completed_successfully
     volumes:
       - ../personal-website:/app/personal-website/
 
