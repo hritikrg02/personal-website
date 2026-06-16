@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "pages"
+    "pages",
 ]
 
 MIDDLEWARE = [
@@ -72,14 +72,14 @@ WSGI_APPLICATION = "django_project.wsgi.application"
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-     'default': {
-         'ENGINE': f'django.db.backends.{os.getenv('DATABASE_ENGINE')}',
-         'NAME': os.getenv('DATABASE_NAME'),
-         'USER': os.getenv('DATABASE_USERNAME'),
-         'PASSWORD': os.getenv('DATABASE_PASSWORD'),
-         'HOST': os.getenv('DATABASE_HOST'),
-         'PORT': os.getenv('DATABASE_PORT'),
-     }
+    "default": {
+        "ENGINE": f"django.db.backends.{os.getenv('DATABASE_ENGINE')}",
+        "NAME": os.getenv("DATABASE_NAME"),
+        "USER": os.getenv("DATABASE_USERNAME"),
+        "PASSWORD": os.getenv("DATABASE_PASSWORD"),
+        "HOST": os.getenv("DATABASE_HOST"),
+        "PORT": os.getenv("DATABASE_PORT"),
+    }
 }
 
 
