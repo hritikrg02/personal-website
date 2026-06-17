@@ -46,8 +46,19 @@ services:
         condition: service_healthy
       db-migration:
         condition: service_completed_successfully
+      static-collection:
+        condition: service_completed_successfully
     volumes:
       - ../personal-website:/app/personal-website/
+
+  static-collection:
+    build: .
+    command: python django_project/manage.py collectstatic
+    working_dir: /var/static
+    container_name: django-collectstatic
+    env_file: .env
+    volumes:
+      - ../personal-website:/var/static/
 
 volumes:
   postgres_data:
