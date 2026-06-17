@@ -32,8 +32,8 @@ services:
 
   web-server:
     build: .
-    command: python django_project/manage.py runserver 0.0.0.0:2680 --noreload
-    working_dir: /app/personal-website
+    command: gunicorn --bind 0.0.0.0:2680 --workers 25 django_project.wsgi
+    working_dir: /app/personal-website/django_project
     container_name: django-server
     ports:
       - "2680:2680"
@@ -62,3 +62,4 @@ services:
 
 volumes:
   postgres_data:
+    driver: local
