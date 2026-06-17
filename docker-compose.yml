@@ -53,7 +53,7 @@ services:
 
   static-collection:
     build: .
-    command: python django_project/manage.py collectstatic
+    command: python django_project/manage.py collectstatic --no-input
     working_dir: /var/static
     container_name: django-collectstatic
     env_file: .env
