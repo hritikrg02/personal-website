@@ -1,0 +1,8 @@
+django_project
+pages
+static
+staticfiles
+templates
+Dockerfile
+manage.py
+.dockerignore
