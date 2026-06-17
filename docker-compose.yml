@@ -23,7 +23,7 @@ services:
     build:
       context: django_project
       dockerfile: Dockerfile
-    command: python django_project/manage.py migrate
+    command: python manage.py migrate
     working_dir: /var/migrations
     container_name: django-migrations
     env_file: .env
@@ -31,14 +31,14 @@ services:
       db:
         condition: service_healthy
     volumes:
-      - ../personal-website:/var/migrations/
+      - ./django_project:/var/migrations/
 
   web-server:
     build:
       context: django_project
       dockerfile: Dockerfile
     command: gunicorn --bind 0.0.0.0:2680 --workers 25 django_project.wsgi
-    working_dir: /app/personal-website/django_project
+    working_dir: /app
     container_name: django-server
     ports:
       - "2680:2680"
@@ -54,19 +54,19 @@ services:
       static-collection:
         condition: service_completed_successfully
     volumes:
-      - ../personal-website:/app/personal-website/
+      - ./django_project:/app
     restart: always
 
   static-collection:
     build:
       context: django_project
       dockerfile: Dockerfile
-    command: python django_project/manage.py collectstatic --no-input
+    command: python manage.py collectstatic --no-input
     working_dir: /var/static
     container_name: django-collectstatic
     env_file: .env
     volumes:
-      - ../personal-website:/var/static/
+      - ./django_project:/var/static/
 
 volumes:
   postgres_data:
