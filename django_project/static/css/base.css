@@ -9,8 +9,8 @@
     --color-text-faint: #6B6053;
     --color-border-muted: #4A3E37;
     --color-icon-muted: #8C887F;
-    --font-serif: Georgia, "Times New Roman", serif;
-    --font-sans: -apple-system, Futura, sans-serif;
+    --font-serif: Georgia, serif;
+    --font-sans: -apple-system, sans-serif;
     --max-width: 1200px;
 }
 
