@@ -6,14 +6,18 @@ from django.shortcuts import render
 def home_page_view(request):
     return render(request, "home.html")
 
+
 def projects_page_view(request):
     return render(request, "projects.html")
+
 
 def musescore_page_view(request):
     return render(request, "musescore-engraving.html")
 
+
 def photography_page_view(request):
     return render(request, "photography.html")
+
 
 def thesis_page_view(request):
     return render(request, "thesis.html")
