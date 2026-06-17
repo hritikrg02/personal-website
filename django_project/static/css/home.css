@@ -39,7 +39,7 @@
 }
 
 .photo-slot.profile {
-    width: clamp(150px, 30vw, 750px);
+    width: clamp(300px, 26vw, 750px);
 }
 
 .photo-slot.profile img {
