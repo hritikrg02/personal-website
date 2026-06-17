@@ -18,8 +18,11 @@
                 {% url 'home' as home_url %}
                 <li><a href="{{ home_url }}" class="{% if request.path != home_url %}muted{% endif %}">HOME</a></li>
 
-                {% url 'about' as about_url %}
-                <li><a href="{{ about_url }}" class="{% if request.path != about_url %}muted{% endif %}">PROJECTS</a></li>
+                {% url 'projects' as projects_url %}
+                <li><a href="{{ projects_url }}" class="{% if request.path != projects_url %}muted{% endif %}">PROJECTS</a></li>
+
+                {% url 'thesis' as thesis_url %}
+                <li><a href="{{ thesis_url }}" class="{% if request.path != thesis_url %}muted{% endif %}">THESIS</a></li>
             </ul>
         </nav>
     </div>
