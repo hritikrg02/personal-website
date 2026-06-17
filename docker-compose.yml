@@ -2,8 +2,6 @@ services:
   db:
     image: postgres:17-alpine
     container_name: postgres-db
-    ports:
-      - "5432:5432"
     env_file:
       - .env
     environment:
@@ -24,24 +22,24 @@ services:
       context: django_project
       dockerfile: Dockerfile
     command: python manage.py migrate
-    working_dir: /var/migrations
+    working_dir: /app
     container_name: django-migrations
     env_file: .env
     depends_on:
       db:
         condition: service_healthy
     volumes:
-      - ./django_project:/var/migrations/
+      - ./django_project:/app
 
   web-server:
     build:
-      context: django_project
+      context: ./django_project
       dockerfile: Dockerfile
     command: gunicorn --bind 0.0.0.0:2680 --workers 25 django_project.wsgi
     working_dir: /app
     container_name: django-server
-    ports:
-      - "2680:2680"
+    expose:
+      - 2680
     env_file: .env
     environment:
       - PYTHONDONTWRITEBYTECODE=1
@@ -59,15 +57,31 @@ services:
 
   static-collection:
     build:
-      context: django_project
+      context: ./django_project
       dockerfile: Dockerfile
-    command: python manage.py collectstatic --no-input
-    working_dir: /var/static
+    command: python manage.py collectstatic --no-input --clear
+    working_dir: /app
     container_name: django-collectstatic
     env_file: .env
     volumes:
-      - ./django_project:/var/static/
+      - ./django_project:/app
+      - static_volume:/app/staticfiles/
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      web-server:
+        condition: service_started
+    volumes:
+      - static_volume:/app/staticfiles/:ro
+    restart: always
 
 volumes:
+  static_volume:
   postgres_data:
     driver: local
