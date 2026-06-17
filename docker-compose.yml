@@ -19,7 +19,9 @@ services:
       - postgres_data:/etc/data
 
   db-migration:
-    build: .
+    build:
+      context: django_project
+      dockerfile: Dockerfile
     command: python django_project/manage.py migrate
     working_dir: /var/migrations
     container_name: django-migrations
@@ -31,7 +33,9 @@ services:
       - ../personal-website:/var/migrations/
 
   web-server:
-    build: .
+    build:
+      context: django_project
+      dockerfile: Dockerfile
     command: gunicorn --bind 0.0.0.0:2680 --workers 25 django_project.wsgi
     working_dir: /app/personal-website/django_project
     container_name: django-server
@@ -52,7 +56,9 @@ services:
       - ../personal-website:/app/personal-website/
 
   static-collection:
-    build: .
+    build:
+      context: django_project
+      dockerfile: Dockerfile
     command: python django_project/manage.py collectstatic --no-input
     working_dir: /var/static
     container_name: django-collectstatic
