@@ -10,7 +10,7 @@
     --color-border-muted: #4A3E37;
     --color-icon-muted: #8C887F;
     --font-serif: Georgia, "Times New Roman", serif;
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-sans: -apple-system, Futura, sans-serif;
     --max-width: 1200px;
 }
 
@@ -25,6 +25,7 @@ body {
     color: var(--color-cream);
     font-family: var(--font-sans);
     padding-bottom: 3rem;
+    font-variant-ligatures: common-ligatures;
 }
 
 .wrap {
@@ -129,7 +130,7 @@ h1.name {
     font-weight: 700;
     font-style: italic;
     font-family: var(--font-serif);
-    margin: 0 0 0.5rem;
+    margin: 0 0 1rem;
     line-height: 0.9;
     letter-spacing: -1px;
 }
@@ -169,6 +170,18 @@ h1.name {
     justify-content: center;
     color: var(--color-cream);
     font-size: 14px;
+    z-index: 10;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+
+    /* Matches the container's rounded corners so it doesn't bleed out */
+    border-radius: 2px;
 }
 
 .placeholder-icon {
