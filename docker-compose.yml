@@ -17,6 +17,7 @@ services:
       retries: 5
     volumes:
       - postgres_data:/etc/data
+    restart: always
 
   db-migration:
     build:
@@ -54,6 +55,7 @@ services:
         condition: service_completed_successfully
     volumes:
       - ../personal-website:/app/personal-website/
+    restart: always
 
   static-collection:
     build:
