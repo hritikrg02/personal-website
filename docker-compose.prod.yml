@@ -1,18 +1,4 @@
 services:
-  db-migration:
-    build:
-      context: django_project
-      dockerfile: Dockerfile
-    command: python manage.py migrate
-    working_dir: /app
-    container_name: django-migrations
-    env_file: .env
-    depends_on:
-      db:
-        condition: service_healthy
-    volumes:
-      - ./django_project:/app
-
   static-collection:
     build:
       context: ./django_project
@@ -25,37 +11,10 @@ services:
       - ./django_project:/app
       - static_volume:/app/staticfiles/
 
-  db:
-    image: postgres:17-alpine
-    container_name: postgres-db
-    env_file:
-      - .env
-    environment:
-      - POSTGRES_DB=${DATABASE_NAME}
-      - POSTGRES_USER=${DATABASE_USERNAME}
-      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -d $$POSTGRES_DB -U $$POSTGRES_USER"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-    volumes:
-      - postgres_data:/etc/data
-    restart: always
-
   web-server:
-    build:
-      context: ./django_project
-      dockerfile: Dockerfile
     command: gunicorn --bind 0.0.0.0:2680 --workers 25 django_project.wsgi
-    working_dir: /app
-    container_name: django-server
     expose:
       - 2680
-    env_file: .env
-    environment:
-      - PYTHONDONTWRITEBYTECODE=1
-      - PYTHONUNBUFFERED=1
     depends_on:
       db:
         condition: service_healthy
@@ -63,9 +22,6 @@ services:
         condition: service_completed_successfully
       static-collection:
         condition: service_completed_successfully
-    volumes:
-      - ./django_project:/app
-    restart: always
 
   nginx:
     build:
@@ -93,5 +49,3 @@ services:
 
 volumes:
   static_volume:
-  postgres_data:
-    driver: local
