@@ -11,29 +11,25 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            {% url 'home' as home_url %}
-            <li><a href="{{ home_url }}">HOME</a></li>
+    <header>
+        {% url 'home' as home_url %}
+        <a href="{{ home_url }}">HOME</a>
 
-            {% url 'projects' as projects_url %}
-            <li><a href="{{ projects_url }}">PROJECTS</a></li>
+        {% url 'projects' as projects_url %}
+        <a href="{{ projects_url }}">PROJECTS</a>
 
-            {% url 'thesis' as thesis_url %}
-            <li><a href="{{ thesis_url }}">THESIS</a></li>
-        </ul>
-    </nav>
+        {% url 'thesis' as thesis_url %}
+        <a href="{{ thesis_url }}">THESIS</a>
+    </header>
 
     <div>
         {% block content %}
         {% endblock content %}
-
-        <footer id="contact">
-            <span>HRITIK SAYNGANTHONE, MMXXVI</span>
-            <span>hritik@saynganth.one</span>
-        </footer>
-
     </div>
+
+    <footer id="contact">
+        HRITIK SAYNGANTHONE, MMXXVI
+    </footer>
 </body>
 
 </html>
