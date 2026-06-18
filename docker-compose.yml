@@ -89,7 +89,7 @@ services:
       - .env
     environment:
       - TUNNEL_TOKEN=${TUNNEL_TOKEN}
-    restart: always
+    restart: unless-stopped
 
 volumes:
   static_volume:
