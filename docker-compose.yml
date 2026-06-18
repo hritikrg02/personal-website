@@ -17,20 +17,6 @@ services:
       - postgres_data:/etc/data
     restart: always
 
-  db-migration:
-    build:
-      context: django_project
-      dockerfile: Dockerfile
-    command: python manage.py migrate
-    working_dir: /app
-    container_name: django-migrations
-    env_file: .env
-    depends_on:
-      db:
-        condition: service_healthy
-    volumes:
-      - ./django_project:/app
-
   web-server:
     build:
       context: ./django_project
@@ -55,18 +41,6 @@ services:
       - ./django_project:/app
     restart: always
 
-  static-collection:
-    build:
-      context: ./django_project
-      dockerfile: Dockerfile
-    command: python manage.py collectstatic --no-input --clear
-    working_dir: /app
-    container_name: django-collectstatic
-    env_file: .env
-    volumes:
-      - ./django_project:/app
-      - static_volume:/app/staticfiles/
-
   nginx:
     build:
       context: ./nginx
@@ -80,6 +54,32 @@ services:
     volumes:
       - static_volume:/app/staticfiles/:ro
     restart: always
+
+  db-migration:
+    build:
+      context: django_project
+      dockerfile: Dockerfile
+    command: python manage.py migrate
+    working_dir: /app
+    container_name: django-migrations
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./django_project:/app
+
+  static-collection:
+    build:
+      context: ./django_project
+      dockerfile: Dockerfile
+    command: python manage.py collectstatic --no-input --clear
+    working_dir: /app
+    container_name: django-collectstatic
+    env_file: .env
+    volumes:
+      - ./django_project:/app
+      - static_volume:/app/staticfiles/
 
 volumes:
   static_volume:
