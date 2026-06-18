@@ -9,21 +9,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hritik Saynganthone</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
     <link rel="stylesheet" href="{% static 'css/dark.css' %}">
     <link rel="stylesheet" href="{% static 'css/simple-icons.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        {% url 'home' as home_url %}
-        <a href="{{ home_url }}">HOME</a>
+        <div class="main">
+            <a href="{{ home_url }}">Hritik Saynganthone</a>
+        </div>
 
-        {% url 'projects' as projects_url %}
-        <a href="{{ projects_url }}">PROJECTS</a>
+        <nav>
+            {% url 'home' as home %}
+            <a href="{{ projects_url }}">Home</a>
 
-        {% url 'thesis' as thesis_url %}
-        <a href="{{ thesis_url }}">THESIS</a>
+            {% url 'projects' as projects_url %}
+            <a href="{{ projects_url }}">Projects</a>
+
+            {% url 'thesis' as thesis_url %}
+            <a href="{{ thesis_url }}">Thesis</a>
+        </nav>
     </header>
 
     {% block content %}
