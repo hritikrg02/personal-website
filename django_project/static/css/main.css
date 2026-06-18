@@ -3,7 +3,7 @@
   /* Light theme colors */
   --color-primary: #dc143c;
   --color-primary-hover: #b91c3c;
-  --color-border: #663399;
+  --color-border: #00bfb2;
   --color-callout: #1e90ff;
   --color-text: #232333;
   --color-text-muted: #737373;
@@ -15,16 +15,16 @@
   --color-background-draft: #f9f2f4;
 
   /* Dark theme colors */
-  --color-primary-dark: #50fa7b;
-  --color-primary-hover-dark: #3dd458;
-  --color-border-dark: #0066ff;
+  --color-primary-dark: #F55D5D;
+  --color-primary-hover-dark: #ff4775;
+  --color-border-dark: #4b9afb;
   --color-text-dark: #ffffff;
   --color-text-muted-dark: #dddddd;
-  --color-background-dark: #202124;
-  --color-background-code-dark: #3a3a3a;
-  --color-background-pre-dark: #272822;
-  --color-background-toc-dark: #272822;
-  --color-background-draft-dark: #0066ff;
+  --color-background-dark: #1E1E1E;
+  --color-background-code-dark: #252525;
+  --color-background-pre-dark: #252525;
+  --color-background-toc-dark: #252525;
+  --color-background-draft-dark: #4b9afb;
 
   /* Spacing and sizing */
   --content-max-width: 800px;
@@ -181,6 +181,11 @@ img {
   max-inline-size: 100%;
   block-size: auto;
   border-radius: var(--border-radius, 5px);
+}
+
+.image-left {
+    float: left;
+    margin-right: 15px;
 }
 
 figure {
