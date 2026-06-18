@@ -1,4 +1,30 @@
 services:
+  db-migration:
+    build:
+      context: django_project
+      dockerfile: Dockerfile
+    command: python manage.py migrate
+    working_dir: /app
+    container_name: django-migrations
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./django_project:/app
+
+  static-collection:
+    build:
+      context: ./django_project
+      dockerfile: Dockerfile
+    command: python manage.py collectstatic --no-input --clear
+    working_dir: /app
+    container_name: django-collectstatic
+    env_file: .env
+    volumes:
+      - ./django_project:/app
+      - static_volume:/app/staticfiles/
+
   db:
     image: postgres:17-alpine
     container_name: postgres-db
@@ -55,31 +81,15 @@ services:
       - static_volume:/app/staticfiles/:ro
     restart: always
 
-  db-migration:
-    build:
-      context: django_project
-      dockerfile: Dockerfile
-    command: python manage.py migrate
-    working_dir: /app
-    container_name: django-migrations
-    env_file: .env
-    depends_on:
-      db:
-        condition: service_healthy
-    volumes:
-      - ./django_project:/app
-
-  static-collection:
-    build:
-      context: ./django_project
-      dockerfile: Dockerfile
-    command: python manage.py collectstatic --no-input --clear
-    working_dir: /app
-    container_name: django-collectstatic
-    env_file: .env
-    volumes:
-      - ./django_project:/app
-      - static_volume:/app/staticfiles/
+  cloudflared:
+    image: cloudflare/cloudflared:latest-arm64
+    command: tunnel run
+    container_name: cloudflared
+    env_file:
+      - .env
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    restart: always
 
 volumes:
   static_volume:
