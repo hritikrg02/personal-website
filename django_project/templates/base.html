@@ -11,20 +11,22 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/dark.css' %}">
     <link rel="stylesheet" href="{% static 'css/simple-icons.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="main">
+            {% url 'home' as home_url %}
             <a href="{{ home_url }}">Hritik Saynganthone</a>
         </div>
 
         <nav>
-            {% url 'home' as home %}
-            <a href="{{ projects_url }}">Home</a>
+            {% url 'home' as home_url %}
+            <a href="{{ home_url }}">Home</a>
 
             {% url 'projects' as projects_url %}
             <a href="{{ projects_url }}">Projects</a>
@@ -44,7 +46,7 @@
             <a class="soc" href="www.google.com" rel="me" title="gitlab"><i class="si si-gitlab"></i></a>
             <a class="border"></a>
         </div>
-        HRITIK SAYNGANTHONE, 2026
+        SAYNGANTH.ONE © 2026
         <a class="border"></a>
         <div class="footer-info">
             Based on <a href="https://github.com/athul/archie">Archie Theme</a>
