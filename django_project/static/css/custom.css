@@ -14,3 +14,15 @@
     --color-background-draft-dark: #4b9afb;
     --color-border: #00bfb2;
 }
+
+html {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+p {
+    font-family: 'Montserrat', -apple-system, sans-serif;
+}
+
+.callout p {
+    font-family: 'JetBrains Mono', monospace;
+}
