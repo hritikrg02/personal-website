@@ -1,0 +1,17 @@
+/* static/css/custom.css */
+
+:root {
+
+  /* Dark theme colors */
+  --color-primary-dark: #F55D5D;
+  --color-primary-hover-dark: #ff4775;
+  --color-border-dark: #4b9afb;
+  --color-text-dark: #ffffff;
+  --color-text-muted-dark: #dddddd;
+  --color-background-dark: #1E1E1E;
+  --color-background-code-dark: #252525;
+  --color-background-pre-dark: #252525;
+  --color-background-toc-dark: #252525;
+  --color-background-draft-dark: #4b9afb;
+    --color-border: #00bfb2;
+}

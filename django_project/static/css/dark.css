@@ -1,3 +1,5 @@
+/* static/css/dark.css */
+
 /* Dark theme overrides */
 body {
   color: var(--color-text-dark, #ffffff);
