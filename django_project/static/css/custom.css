@@ -3,7 +3,7 @@
 
     /* Dark theme colors */
     --color-primary-dark: #F55D5D;
-    --color-primary-hover-dark: #ff4775;
+    --color-primary-hover-dark: #c54c4c;
     --color-border-dark: #4b9afb;
     --color-text-dark: #ffffff;
     --color-text-muted-dark: #dddddd;
@@ -13,6 +13,14 @@
     --color-background-toc-dark: #252525;
     --color-background-draft-dark: #4b9afb;
     --color-border: #00bfb2;
+
+    /* header colors */
+    --header-1: #FF4775;
+    --header-2: #FF6F60;
+    --header-3: #4A9BFB;
+    --header-4: #FFCA60;
+    --header-5: #01BFB2;
+    --header-6: #DF61FF
 }
 
 html {
@@ -25,4 +33,61 @@ p {
 
 .callout p {
     font-family: 'JetBrains Mono', monospace;
+}
+
+h1 {
+    font-size: 1.25rem;
+}
+
+h2 {
+    font-size: 1.20rem;
+}
+
+h3 {
+    font-size: 1.15rem;
+}
+
+h4 {
+    font-size: 1.10rem;
+}
+
+h5 {
+    font-size: 1.05rem;
+}
+
+h6 {
+    font-size: 1.00rem;
+}
+
+h1::before {
+    color: var(--header-1);
+    content: '# ';
+}
+h2::before {
+    color: var(--header-2);
+    content: '## ';
+}
+h3::before {
+    color: var(--header-3);
+    content: '### ';
+}
+h4::before {
+    color: var(--header-4);
+    content: '#### ';
+}
+h5::before {
+    color: var(--header-5);
+    content: '##### ';
+}
+h6::before {
+    color: var(--header-6);
+    content: '###### ';
+}
+
+figure.portrait {
+  padding-left: 0;
+  padding-bottom: 1.5rem;
+  padding-right: 1.5rem;
+  width: 250px;
+  float: left;
 }
