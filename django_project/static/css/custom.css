@@ -84,10 +84,18 @@ h6::before {
     content: '###### ';
 }
 
-figure.portrait {
+.portrait-left {
   padding-left: 0;
   padding-bottom: 1.5rem;
   padding-right: 1.5rem;
-  width: 250px;
+  width: 300px;
   float: left;
+}
+
+.portrait-right {
+  padding-left: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-right: 0;
+  width: 350px;
+  float: right;
 }

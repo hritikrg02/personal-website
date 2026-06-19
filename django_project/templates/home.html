@@ -3,8 +3,8 @@
 {% load static %}
 
 {% block content %}
-<figure class="portrait">
-    <img src="{% static 'img/hritiks.jpg' %}" alt="Hritik Saynganthone" width="512px">
+<figure class="portrait-left ">
+    <img src="{% static 'img/hritiks.jpg' %}" alt="Hritik Saynganthone">
 </figure>
 
 <h2>Husband, computer scientist, &amp; orchestral conductor. Call me Ricky.</h2>
@@ -20,10 +20,15 @@
 <p>I am a recent MSc graduate from Rochester Institute of Technology. I was also a member of RIT's <a href="https://www.cs.rit.edu/~dprl/">Document Pattern and Recognition Lab</a>, lead by <a href="https://www.cs.rit.edu/~rlaz/">Dr. Richard Zanibbi</a>.</p>
 
 <h2>Orchestral Conducting</h2>
-<!--TODO-->
+<figure class="portrait-right ">
+    <img src="{% static 'img/conducting.jpg' %}" alt="Conducting">
+</figure>
+
+<p>During my time at RIT, I became a member of <a href="https://www.youtube.com/@RITGameSymphonyOrchestra">RIT Game Symphony Orchestra</a>, the largest performing arts group on RIT's campus, with around 180 performers. I have remained a member of this group since the Fall of 2020, and held several executive board positions while I was still a student.</p>
+<p>From May 2022 to May 2023 I was the wind section lead and from May 2023 to May 2026 I was one of the orchestral conductor's of the group. I began as the assistant conductor and held that position for two years, followed by one year as the primary conductor.</p>
+<p>In the months following, I have begun the process of starting my own community orchestra within the Rochester Metropolitan Area, known as the <b>Rochester Contemporary Community Orchestra</b>. I am establishing this group with fellow RIT and GSO alumni <a href="https://www.linkedin.com/in/ethan-geye-6b8450251/">Ethan Geye</a>, with him holding the role of president and myself as conductor.</p>
 
 <h2>Website</h2>
-<p>This entire website is a static self-hosted site built using Django 6 and Python 3.13. All the HTML was written by hand and no CSS frameworks were used.</p>
-<p>The theming of this website is based on the personal site of <a href="https://www.jeffgeerling.com/about/">Jeff Geerling</a> using the <a href="https://github.com/athul/archie">Archie Theme</a>.</p>
+<p>This entire website is a static self-hosted site built using Django 6 and Python 3.13. All the HTML was written by hand and no CSS frameworks were used. The theming of this website is based on the personal site of <a href="https://www.jeffgeerling.com/about/">Jeff Geerling</a> using the <a href="https://github.com/athul/archie">Archie Theme</a>.</p>
 
 {% endblock content %}
