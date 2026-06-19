@@ -10,6 +10,9 @@ def home_page_view(request):
 def projects_page_view(request):
     return render(request, "projects.html")
 
+def work_page_view(request):
+    return render(request, "work.html")
+
 
 def musescore_page_view(request):
     return render(request, "musescore-engraving.html")

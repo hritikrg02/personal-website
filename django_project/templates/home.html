@@ -12,9 +12,6 @@
 <p>Hi! I am a machine learning and general software engineer based in Rochester NY. I specialize in developing machine learning models using PyTorch, but have work experience in frontend, backend, and devops.</p>
 <p>I am currently looking for a software engineering position either in-person/hybrid in the Rochester, Buffalo, or Syracuse area, or anywhere remote. I am a US citizen and do not require any kind of sponsorship in order to work in the United States.</p>
 
-<h2>Work Experience</h2>
-<!--TODO-->
-
 <h2>Education</h2>
 <figure class="portrait-right" style="width: 325px">
     <img src="{% static 'img/graduation.jpg' %}" alt="Conducting">
@@ -36,6 +33,17 @@
 {% url 'thesis' as thesis_url %}
 <p>Additionally, I began work on my master's thesis during January 2024 and successfully defended my work in December 2025. More information on the work itself can be found <a href="{{ thesis_url }}">here</a>.</p>
 
+
+<h2>Work Experience</h2>
+<p>At present, I have around four years of work experience through two organizations:</p>
+<ul>
+    <li><b>Solü Technology Partners</b> as a software development intern.</li>
+    <li><b>Kate Gleason College of Engineering</b> as a research assistant.</li>
+</ul>
+
+{% url 'work' as work_url %}
+<p>I worked on several projects during my time at these organizations, the details of which can be found <a href="{{ work_url }}">here</a>.</p>
+
 <h2>Orchestral Conducting</h2>
 <figure class="portrait-right">
     <img src="{% static 'img/conducting.jpg' %}" alt="Conducting">
@@ -44,6 +52,9 @@
 <p>During my time at RIT, I became a member of <a href="https://www.youtube.com/@RITGameSymphonyOrchestra">RIT Game Symphony Orchestra</a>, the largest performing arts group on RIT's campus, with around 180 performers. I have remained a member of this group since the Fall of 2020, and held several executive board positions while I was still a student.</p>
 <p>From May 2022 to May 2023 I was the wind section lead and from May 2023 to May 2026 I was one of the orchestral conductor's of the group. I began as the assistant conductor and held that position for two years, followed by one year as the primary conductor.</p>
 <p>In the months following, I have begun the process of starting my own community orchestra within the Rochester Metropolitan Area, known as the <b>Rochester Contemporary Community Orchestra</b>. I am establishing this group with fellow RIT and GSO alumni <a href="https://www.linkedin.com/in/ethan-geye-6b8450251/">Ethan Geye</a>, with him holding the role of president and myself as conductor.</p>
+
+<h2>Contact Me</h2>
+<!--TODO-->
 
 <h2>Website</h2>
 <p>This entire website is a static self-hosted site built using Django 6 and Python 3.13. All the HTML was written by hand and no CSS frameworks were used. The theming of this website is based on the personal site of <a href="https://www.jeffgeerling.com/about/">Jeff Geerling</a> using the <a href="https://github.com/athul/archie">Archie Theme</a>.</p>
