@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-<figure class="portrait-left ">
+<figure class="portrait-left">
     <img src="{% static 'img/hritiks.jpg' %}" alt="Hritik Saynganthone">
 </figure>
 
@@ -16,11 +16,28 @@
 <!--TODO-->
 
 <h2>Education</h2>
-<!--TODO-->
-<p>I am a recent MSc graduate from Rochester Institute of Technology. I was also a member of RIT's <a href="https://www.cs.rit.edu/~dprl/">Document Pattern and Recognition Lab</a>, lead by <a href="https://www.cs.rit.edu/~rlaz/">Dr. Richard Zanibbi</a>.</p>
+<figure class="portrait-right" style="width: 325px">
+    <img src="{% static 'img/graduation.jpg' %}" alt="Conducting">
+</figure>
+
+<p>I graduated with my MSc in computer science with a minor in mathematics from Rochester Institute of Technology in May 2026. I was also a member of RIT's <a href="https://www.cs.rit.edu/~dprl/">Document Pattern and Recognition Lab</a>, lead by <a href="https://www.cs.rit.edu/~rlaz/">Dr. Richard Zanibbi</a>.</p>
+<p>During my time, I took several courses that both reinforced and broadened my horizons, such as:</p>
+<ul>
+    <li><i>Machine Learning</i></li>
+    <li><i>Foundations of Computer Vision</i></li>
+    <li><i>Global Illumination</i></li>
+    <li><i>Introduction to Software Engineering</i></li>
+    <li><i>Concepts of Parallel and Distributed Systems</i></li>
+    <li><i>Computational Complexity</i></li>
+</ul>
+
+{% url 'projects' as projects_url %}
+<p>I also completed several academic projects as a part of these classes, some of which can be found <a href="{{ projects_url }}">here</a>.</p>
+{% url 'thesis' as thesis_url %}
+<p>Additionally, I began work on my master's thesis during January 2024 and successfully defended my work in December 2025. More information on the work itself can be found <a href="{{ thesis_url }}">here</a>.</p>
 
 <h2>Orchestral Conducting</h2>
-<figure class="portrait-right ">
+<figure class="portrait-right">
     <img src="{% static 'img/conducting.jpg' %}" alt="Conducting">
 </figure>
 
