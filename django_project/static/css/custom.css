@@ -85,19 +85,23 @@ h6::before {
 }
 
 .portrait-left {
-  padding-left: 0;
-  padding-bottom: 1.5rem;
-  padding-right: 1.5rem;
-  width: 300px;
-  float: left;
+    padding-left: 0;
+    padding-bottom: 1.5rem;
+    padding-right: 1.5rem;
+    max-width: 300px;
+    width: 60%;
+    height: auto;
+    float: left;
 }
 
 .portrait-right {
-  padding-left: 1.5rem;
-  padding-bottom: 1.5rem;
-  padding-right: 0;
-  width: 350px;
-  float: right;
+    padding-left: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-right: 0;
+    max-width: 350px;
+    float: right;
+    width: 60%;
+    height: auto;
 }
 
 ul > li::before {
