@@ -1,7 +1,26 @@
 <!--templates/thesis.html-->
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <h1>Thesis</h1>
-<p>This page is under construction, check back later!</p>
+<figure class="portrait-left" style="max-width: 350px">
+    <img src="{% static 'img/crnn-web.png' %}" alt="crnn">
+</figure>
+
+<p>My master's thesis is entitled <a href="https://repository.rit.edu/theses/12492/">An Examination of High-Entropy Alternatives of Connectionist Temporal Classification [CTC] Loss for Optical Music Recognition [OMR] Using Convolutional Recurrent Neural Networks [CRNNs]</a>. As the title implies, the core of the work was testing alternatives to the CTC loss function -- the most commonly used loss function in the computer vision subfield of OMR.</p>
+<br>
+<ul>
+    <li>Codebase and Libraries: <i>Python</i>,<i>PyTorch</i>, <i>CUDA</i>, <i>NumPy</i>, <i>Matplotlib</i>, <i>Music21</i></li>
+    <li>Environments and Version Control: <i>Git</i>, <i>GitHub</i>, <i>GitLab</i>, <i>Makefile</i>, <i>Conda</i>, <i>Virtualenv</i></li>
+    <li>Additional Technologies: <i>LaTeX</i>, <i>Linux</i>, <i>Slurm</i></li>
+</ul>
+
+<h2>Thesis Details</h2>
+<p>The pre-proposal period was from January 2025 to May 2025, wherein I explored several topics within OMR. During this time, I stumbled upon alternatives to the CTC loss function which, up to that point, was the most widely used loss function within OMR when paired with the most common OMR. At that time, attempts to improve OMR systems were largely focused on things like encoding or model architecture and not on the loss function itself. However, several alternatives to CTC loss did already exist that solved many of the issues that crop up when using CTC, including when using in OMR. It just so happened that none of those solutions had been tried within OMR systems.</p>
+<p>After a short hiatus during the summer, I resumed work on my thesis from May 2025 to December 2025. I honed my focus from CTC loss alternatives in general to those that focused on increasing the entropy of one of the many probability distributions one could argue exist when predicting tokens during CRNN inference. I defended the work in December 2025 and passed. To date, this is the only thesis I can find that explores these high entropy alternatives to CTC loss within the context of OMR.</p>
+
+<h2>Revision &amp; Publication</h2>
+<p>From January 2026 to present, I have been in the process of revising the work for publication. This process has involved additional experiments being performed, inspired from questions asked of me during my defense. More details to come as this process continues.</p>
+
 {% endblock content %}
