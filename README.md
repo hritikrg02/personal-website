@@ -1,1 +1,2 @@
-# TODO
+# Description
+This is the repo for my personal website, hosted [here](https://www.saynganth.one). It is built using Django 6 and Python 3.13. It is static and only uses postgresql database for initial startup migrations.
